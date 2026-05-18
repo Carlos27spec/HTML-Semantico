@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
     <title>Página</title>
 </head>
 <body>
     <header>
         <p>Lorem, ipsum dolor.</p>
-        <div>
-        <input type="text" placeholder="Input">
-        <button>Buscar</button>
-        </div>
+        <form>
+            
+        <input type="text" id="Receita">
+        <button onclick="cardapio()">Buscar</button>
+        </form>
     </header>
     <section><h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1></section>
      <main>
-        <div id="container">
-        <img src="download.jpeg" alt="Desing">
-        <div>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <p>çLorem ipsum dolor sit.</p>
-        <p>Lorem, ipsum dolor.</p>
-        <p>Lorem, ipsum.</p>
-        <div id="button">
+<div id="container">
+        <img src="https://cdn.goomer.com.br/website/base/729/833/2f0/cozinha-de-restaurante.jpg" id="Comida">
+    <div id="texto">
+        <p>Nome:<span id="Nome"></span></p>
+        <p>Ingredientes:<span id="Ingredientes"></span></p>
+        <p>Avaliação:<span id="Avaliação"></span></p>
+        <p>Categoria:<span id="Categoria"></span></p>
+    <div id="button">
         <button>Voltar</button>
         <button>Avançar</button>
-        </div>
-        </div>
-        </div>
+    </div>
+</div>
+    </div>
     </main>
 </body>
 </html>

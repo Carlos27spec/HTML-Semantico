@@ -21,7 +21,7 @@ header{
     flex-grow: 0.1;
 }
 
-header > div{
+header > form{
     display: flex;
     gap: 10px;
 }
@@ -36,9 +36,9 @@ header > p{
 section{
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 10px;
-    flex-grow: 0.2;
+    align-items: flex-end;
+    padding: 10px 10px 5px;
+    flex-grow: 1;
 }
 
 section > h1{
@@ -64,13 +64,13 @@ main{
     width: 550px;
 }
 
-#container > div{
+#container > #texto{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 100px;
     font-size: x-large;
-    padding: 20px;
+    padding: 10px;
 }
 
 #button{
