@@ -6,27 +6,33 @@
 
 
 // Variável global para guardar as receitas vindas da API
-let listaReceitas = [];
+let listaReceitas;
 
 // Busca os dados da API e salva na variável global
 async function getDados(receita) {
-    let dadosID
+    let dadosID;
     if(isNaN(receita)){
-    dadosID = await(await fetch(`https://dummyjson.com/recipes/name=${receita}`)).json();
+    dadosID = await(await fetch(`https://dummyjson.com/recipes/search?q=${receita}`)).json();
     listaReceitas = dadosID.recipes;
     } else {
-    dadosID = await(await fetch(`https://dummyjson.com/recipes/id=${receita}`)).json();
+    dadosID = await(await fetch(`https://dummyjson.com/recipes/${receita}`)).json();
     listaReceitas = dadosID.recipes;
     }
+    console.log(listaReceitas);
 }
 
-function cardapio() {
+// function mostraReceita(index){
+//     const receitas = listaReceitas[index];
+// }
+
+function cardapio(event) {
     event.preventDefault();
 
     let pedidoDigitado = document.getElementById("Receita").value;
     getDados(pedidoDigitado);
 
     nome.textContent = `Nome: ${listaReceitas.nome}`;
+
 
     // if (receitaEncontrada) {
     //     document.getElementById("Nome").innerText = receitaEncontrada.name;
