@@ -1,54 +1,38 @@
- const nome = document.getElementById("Nome");
- const ingredientes = document.getElementById("Ingredientes");
- const avaliacao = document.getElementById("Avaliação");
- const categoria = document.getElementById("Categoria");
- const image = document.getElementById("Comida")
+let listaReceitas = [];
 
+async function getDados(url) {
+    const dados = await (await fetch(url)).json();
+    listaReceitas = dados.recipes;
 
-// Variável global para guardar as receitas vindas da API
-let listaReceitas;
-
-// Busca os dados da API e salva na variável global
-async function getDados(receita) {
-    let dadosID;
-    if(isNaN(receita)){
-    dadosID = await(await fetch(`https://dummyjson.com/recipes/search?q=${receita}`)).json();
-    listaReceitas = dadosID.recipes;
-    } else {
-    dadosID = await(await fetch(`https://dummyjson.com/recipes/${receita}`)).json();
-    listaReceitas = dadosID.recipes;
-    }
-    console.log(listaReceitas);
+    const dadosEspecifico = await (await fetch(`https://dummyjson.com/recipes/${}`)).json();
+    listaReceitas.push(dadosEspecifico);
 }
 
-// function mostraReceita(index){
-//     const receitas = listaReceitas[index];
-// }
+getDados("https://dummyjson.com/recipes/search?q=Margherita");
 
-function cardapio(event) {
-    event.preventDefault();
-
+function cardapio() {
     let pedidoDigitado = document.getElementById("Receita").value;
-    getDados(pedidoDigitado);
 
-    nome.textContent = `Nome: ${listaReceitas.nome}`;
+    let receitaEncontrada = listaReceitas.find(
+        p => p.name.toLowerCase() === pedidoDigitado.toLowerCase()
+        || p.id == pedidoDigitado
+    );
 
+    let image = document.getElementById("Comida");
 
-    // if (receitaEncontrada) {
-    //     document.getElementById("Nome").innerText = receitaEncontrada.name;
-    //     document.getElementById("Ingredientes").innerText = receitaEncontrada.ingredients.join("\n");
-    //     document.getElementById("Avaliação").innerText = receitaEncontrada.rating;
-    //     document.getElementById("Categoria").innerText = receitaEncontrada.mealType;
-    //     image.src = receitaEncontrada.image;
-    //     image.style.display = "block";
-    // } else {
-    //     document.getElementById("Nome").innerText = "Receita não encontrada";
-    //     document.getElementById("Nome").innerText = "Receita não encontrada";
-    //     document.getElementById("Ingredientes").innerText = "";
-    //     document.getElementById("Avaliação").innerText = "";
-    //     document.getElementById("Categoria").innerText = "";
-    //     image.src = "";
-    //     image.style.display = "none";
-    // }
+    if (receitaEncontrada) {
+        document.getElementById("Nome").innerText = receitaEncontrada.name;
+        document.getElementById("Ingredientes").innerText = receitaEncontrada.ingredients.join("\n");
+        document.getElementById("Avaliação").innerText = receitaEncontrada.rating;
+        document.getElementById("Categoria").innerText = receitaEncontrada.mealType;
+        image.src = receitaEncontrada.image;
+        image.style.display = "block";
+    } else {
+        document.getElementById("Nome").innerText = "Receita não encontrada";
+        document.getElementById("Ingredientes").innerText = "";
+        document.getElementById("Avaliação").innerText = "";
+        document.getElementById("Categoria").innerText = "";
+        image.src = "";
+        image.style.display = "none";
+    }
 }
-
