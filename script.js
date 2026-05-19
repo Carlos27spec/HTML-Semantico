@@ -4,13 +4,16 @@ async function getDados(url) {
     const dados = await (await fetch(url)).json();
     listaReceitas = dados.recipes;
 
-    const dadosEspecifico = await (await fetch(`https://dummyjson.com/recipes/${}`)).json();
+    for (let i = 1; i <= 50; i++){
+    const dadosEspecifico = await (await fetch(`https://dummyjson.com/recipes/${i}`)).json();
     listaReceitas.push(dadosEspecifico);
+}
 }
 
 getDados("https://dummyjson.com/recipes/search?q=Margherita");
 
 function cardapio() {
+    event.preventDefault();
     let pedidoDigitado = document.getElementById("Receita").value;
 
     let receitaEncontrada = listaReceitas.find(
