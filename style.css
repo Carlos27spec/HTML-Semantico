@@ -11,6 +11,7 @@ body{
     display: flex;
     flex-direction: column;
     font-family: 'Courier New', Courier, monospace;
+    background-image: url(background1.jpg);
 }
 
 header{
@@ -26,11 +27,24 @@ header > form{
     gap: 10px;
 }
 
+form > button{
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form > input{
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
 header > p{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(0, 166, 255);
+    border-radius: 6px;
 }
 
 section{
@@ -44,6 +58,7 @@ section{
 section > h1{
     display: flex;
     background-color: aquamarine;
+    border-radius: 6px;
 }
 
 main{
@@ -57,25 +72,35 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: aliceblue;
+    border-radius: 6px;
 }
 
 #container > img{
     height: 550px;
     width: 550px;
+    border-radius: 6px;
+    border: 1px solid black;
 }
 
 #container > #texto{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 100px;
+    gap: 68px;
     font-size: x-large;
     padding: 10px;
 }
 
+#texto > p{
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
 #button{
     display: flex;
-    gap: 200px;
+    gap: 270px;
+    border-radius: 6px;
 }
 
 #button > button{
