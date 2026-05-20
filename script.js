@@ -39,3 +39,17 @@ function cardapio() {
         image.style.display = "none";
     }
 }
+
+function avancar() {
+    if (posicaoAT < listaReceitas.length - 1) {
+        posicaoAT++;
+        Receita(listaReceitas[posicaoAT]);
+    }
+}
+
+function voltar() {
+    if (posicaoAT > 0) {
+        posicaoAT--;
+        Receita(listaReceitas[posicaoAT]);
+    }
+}
