@@ -12,7 +12,7 @@
 <body>
     <header>
         <p>Receitas Deliciosas</p>
-        <form>
+        <form id="Pesquisa">
 
             <input type="text" id="Receita">
             <button onclick="cardapio()">Buscar</button>
@@ -25,10 +25,11 @@
         <div id="container">
             <img src="https://cdn.goomer.com.br/website/base/729/833/2f0/cozinha-de-restaurante.jpg" id="Comida">
             <div id="texto">
-                <p><span id="Nome">Nome:</span></p>
-                <p><span id="Ingredientes">Ingredientes:</span></p>
-                <p><span id="Avaliação">Avaliação:</span></p>
-                <p><span id="Categoria">Categoria:</span></p>
+                <p>Nome:<span id="Nome"></span></p>
+                <p>ID:<span id="ID"></span></p>
+                <p>Ingredientes:<span id="Ingredientes"></span></p>
+                <p>Avaliação:<span id="Avaliação"></span></p>
+                <p>Categoria:<span id="Categoria"></span></p>
                 <div id="button">
                     <button type="button" onclick="voltar()">Voltar</button>
                     <button type="button" onclick="avancar()">Avançar</button>

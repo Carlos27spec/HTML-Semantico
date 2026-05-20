@@ -16,7 +16,8 @@ getDados("https://dummyjson.com/recipes/search?q=Margherita");
 function Button(Receita) {
     let image = document.getElementById("Comida");
     document.getElementById("Nome").innerText = Receita.name;
-    document.getElementById("Ingredientes").innerText = Receita.ingredients.join("\n");
+    document.getElementById("ID").innerText = Receita.id;
+    document.getElementById("Ingredientes").innerText = Receita.ingredients;
     document.getElementById("Avaliação").innerText = Receita.rating;
     document.getElementById("Categoria").innerText = Receita.mealType;
     image.src = Receita.image;
@@ -36,6 +37,7 @@ function cardapio() {
 
     if (receitaEncontrada) {
         document.getElementById("Nome").innerText = receitaEncontrada.name;
+        document.getElementById("ID").innerText = receitaEncontrada.id
         document.getElementById("Ingredientes").innerText = receitaEncontrada.ingredients.join("\n");
         document.getElementById("Avaliação").innerText = receitaEncontrada.rating;
         document.getElementById("Categoria").innerText = receitaEncontrada.mealType;
@@ -54,13 +56,17 @@ function cardapio() {
 function avancar() {
     if (posicaoAT < listaReceitas.length - 1) {
         posicaoAT++;
-        Button(listaReceitas[posicaoAT]);
+    } else {
+        posicaoAT = 0;
     }
+    Button(listaReceitas[posicaoAT]);
 }
 
 function voltar() {
     if (posicaoAT > 0) {
         posicaoAT--;
-        Button(listaReceitas[posicaoAT]);
+    } else {
+        posicaoAT = listaReceitas.length - 1;
     }
+    Button(listaReceitas[posicaoAT]);
 }

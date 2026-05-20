@@ -22,21 +22,27 @@ header{
     flex-grow: 0.1;
 }
 
-header > form{
+header > #Pesquisa{
     display: flex;
+    justify-content: center;
     gap: 10px;
 }
 
-form > button{
+#Pesquisa > button{
     border: 1px solid black;
     border-radius: 6px;
     cursor: pointer;
 }
 
-form > input{
+#Pesquisa > input{
     border: 1px solid black;
     border-radius: 6px;
     cursor: pointer;
+    height: 40px;
+    width: 170px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 header > p{
@@ -89,13 +95,15 @@ main{
     flex-direction: column;
     justify-content: center;
     gap: 68px;
-    font-size: x-large;
+    font-size: large;
     padding: 10px;
 }
 
 #texto > p{
     border: 1px solid black;
     border-radius: 6px;
+    max-width: 50ch;
+    max-height: 20ch;
 }
 
 #button{
@@ -106,4 +114,11 @@ main{
 
 #button > button{
     font-size: x-large;
+    transition: 300ms;
+}
+
+#button > button:hover{
+    background-color: orange;
+    color: white;
+    transform: scale(1.1);
 }
