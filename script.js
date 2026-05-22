@@ -26,7 +26,7 @@ function Button(Receita) {
 
 function cardapio() {
     event.preventDefault();
-    let pedidoDigitado = document.getElementById("Receita").value;
+    let pedidoDigitado = document.getElementById("Receita").value.trim().replace(/\s+/g, " ");
 
     let receitaEncontrada = listaReceitas.find(
         p => p.name.toLowerCase() === pedidoDigitado.toLowerCase()
@@ -35,7 +35,7 @@ function cardapio() {
 
     let image = document.getElementById("Comida");
 
-    if (receitaEncontrada) {
+    if (receitaEncontrada) {    
         document.getElementById("Nome").innerText = receitaEncontrada.name;
         document.getElementById("ID").innerText = receitaEncontrada.id
         document.getElementById("Ingredientes").innerText = receitaEncontrada.ingredients.join("\n");
@@ -44,7 +44,7 @@ function cardapio() {
         image.src = receitaEncontrada.image;
         image.style.display = "block";
     } else {
-        document.getElementById("Nome").innerText = "Receita não encontrada";
+        document.getElementById("Nome").innerText = "Receita não encontrada, Tente Novamente";
         document.getElementById("Ingredientes").innerText = "";
         document.getElementById("Avaliação").innerText = "";
         document.getElementById("Categoria").innerText = "";
