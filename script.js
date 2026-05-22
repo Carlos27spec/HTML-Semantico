@@ -11,7 +11,7 @@ async function getDados(url) {
 }
 }
 
-getDados("https://dummyjson.com/recipes/search?q=Margherita");
+getDados("https://dummyjson.com/recipes/");
 
 function Button(Receita) {
     let image = document.getElementById("Comida");
@@ -35,6 +35,14 @@ function cardapio() {
 
     let image = document.getElementById("Comida");
 
+    try {
+        if (!receitaEncontrada) {
+            throw new Error("Receita não encontrada, Tente Novamente");
+        }
+    } catch (error) {
+        document.getElementById("Nome").innerText = error.message;
+        return;
+    }
     if (receitaEncontrada) {    
         document.getElementById("Nome").innerText = receitaEncontrada.name;
         document.getElementById("ID").innerText = receitaEncontrada.id
@@ -43,13 +51,6 @@ function cardapio() {
         document.getElementById("Categoria").innerText = receitaEncontrada.mealType;
         image.src = receitaEncontrada.image;
         image.style.display = "block";
-    } else {
-        document.getElementById("Nome").innerText = "Receita não encontrada, Tente Novamente";
-        document.getElementById("Ingredientes").innerText = "";
-        document.getElementById("Avaliação").innerText = "";
-        document.getElementById("Categoria").innerText = "";
-        image.src = "";
-        image.style.display = "none";
     }
 }
 
