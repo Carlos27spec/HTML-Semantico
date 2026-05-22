@@ -90,20 +90,24 @@ main{
     border: 1px solid black;
 }
 
-#container > #texto{
+#container > div{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 68px;
-    font-size: large;
+    gap: 83px;
     padding: 10px;
 }
 
-#texto > p{
+div > p{
+    display: block;
     border: 1px solid black;
     border-radius: 6px;
     max-width: 50ch;
-    max-height: 20ch;
+    max-height: 100%;
+    white-space: nowrap;      
+    overflow: hidden;         
+    text-overflow: ellipsis;   
+
 }
 
 #button{
