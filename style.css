@@ -81,6 +81,7 @@ main{
     background-color: aliceblue;
     border-radius: 6px;
     padding: 10px;
+    height: auto;
 }
 
 #container > img{
@@ -94,7 +95,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 83px;
+    gap: 50px;
     padding: 10px;
 }
 
@@ -102,12 +103,12 @@ div > p{
     display: block;
     border: 1px solid black;
     border-radius: 6px;
+    padding: 10px;
     max-width: 50ch;
     max-height: 100%;
     white-space: nowrap;      
     overflow: hidden;         
     text-overflow: ellipsis;   
-
 }
 
 #button{

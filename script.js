@@ -4,6 +4,7 @@ let posicaoAT = 0;
 async function getDados(url) {
     const dados = await (await fetch(url)).json();
     listaReceitas = dados.recipes;
+    console.log(dados.recipes)
 
     for (let i = 1; i <= 50; i++){
     const dadosEspecifico = await (await fetch(`https://dummyjson.com/recipes/${i}`)).json();
@@ -11,20 +12,20 @@ async function getDados(url) {
 }
 }
 
-getDados("https://dummyjson.com/recipes/");
+getDados("https://dummyjson.com/recipes/search?q=");
 
 function Button(Receita) {
     let image = document.getElementById("Comida");
     document.getElementById("Nome").innerText = Receita.name;
     document.getElementById("ID").innerText = Receita.id;
     document.getElementById("Ingredientes").innerText = Receita.ingredients;
-    document.getElementById("Avaliação").innerText = Receita.rating;
+    document.getElementById("Avaliacao").innerText = Receita.rating;
     document.getElementById("Categoria").innerText = Receita.mealType;
     image.src = Receita.image;
     image.style.display = "block";
 }
 
-function cardapio() {
+function cardapio(event) {
     event.preventDefault();
     let pedidoDigitado = document.getElementById("Receita").value.trim().replace(/\s+/g, " ");
 
@@ -47,11 +48,14 @@ function cardapio() {
         document.getElementById("Nome").innerText = receitaEncontrada.name;
         document.getElementById("ID").innerText = receitaEncontrada.id
         document.getElementById("Ingredientes").innerText = receitaEncontrada.ingredients.join("\n");
-        document.getElementById("Avaliação").innerText = receitaEncontrada.rating;
+        document.getElementById("Avaliacao").innerText = receitaEncontrada.rating;
         document.getElementById("Categoria").innerText = receitaEncontrada.mealType;
         image.src = receitaEncontrada.image;
         image.style.display = "block";
     }
+
+     posicaoAT = listaReceitas.indexOf(receitaEncontrada);
+  exibirReceita(receitaEncontrada);
 }
 
 function avancar() {
