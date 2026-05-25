@@ -142,3 +142,15 @@ p:has(#toggleIngredientes:checked) {
     color: white;
     transform: scale(1.1);
 }
+
+@media  (max-width: 768px){
+    main{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1024px){
+    main{
+        flex-direction: column;
+    }
+}
