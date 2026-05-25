@@ -1,5 +1,5 @@
 let listaReceitas = [];
-let posicaoAT = 0;
+let posicaoAT = -1;
 
 async function getDados() {
     const promessas = [];
@@ -66,10 +66,11 @@ function avancar() {
 }
 
 function voltar() {
-    if (posicaoAT > 0) {
-        posicaoAT--;
-    } else {
+    if (posicaoAT <= 0) {
         posicaoAT = listaReceitas.length - 1;
+    } else {
+        posicaoAT--;
     }
+
     Button(listaReceitas[posicaoAT]);
 }
