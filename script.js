@@ -1,18 +1,17 @@
 let listaReceitas = [];
 let posicaoAT = 0;
 
-async function getDados(url) {
-    const dados = await (await fetch(url)).json();
-    listaReceitas = dados.recipes;
-    console.log(dados.recipes)
-
-    for (let i = 1; i <= 50; i++){
-    const dadosEspecifico = await (await fetch(`https://dummyjson.com/recipes/${i}`)).json();
-    listaReceitas.push(dadosEspecifico);
-}
+async function getDados() {
+    const promessas = [];
+    for (let i = 1; i <= 50; i++) {
+        promessas.push(fetch(`https://dummyjson.com/recipes/${i}`).then(r => r.json()));
+    }
+    listaReceitas = await Promise.all(promessas);
+    console.log("Receitas carregadas:", listaReceitas.length);
 }
 
-getDados("https://dummyjson.com/recipes/search?q=");
+getDados();
+
 
 function Button(Receita) {
     let image = document.getElementById("Comida");
@@ -55,7 +54,6 @@ function cardapio(event) {
     }
 
      posicaoAT = listaReceitas.indexOf(receitaEncontrada);
-  exibirReceita(receitaEncontrada);
 }
 
 function avancar() {
