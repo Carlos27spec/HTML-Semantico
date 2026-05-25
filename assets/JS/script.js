@@ -41,6 +41,13 @@ function cardapio(event) {
         }
     } catch (error) {
         document.getElementById("Nome").innerText = error.message;
+        document.getElementById("ID").innerText = error.message
+        document.getElementById("Ingredientes").innerText = error.message
+        document.getElementById("Avaliacao").innerText = error.message
+        document.getElementById("Categoria").innerText = error.message
+        image.src = "assets/imgs/cozinhafogo.avif"
+        image.style.display = "block";
+        
         return;
     }
     if (receitaEncontrada) {    
