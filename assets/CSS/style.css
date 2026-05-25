@@ -11,7 +11,7 @@ body{
     display: flex;
     flex-direction: column;
     font-family: 'Courier New', Courier, monospace;
-    background-image: url(./assets/imgs/fundo.jpg);
+    background-image: url("./assets/imgs/fundo.jpg");
 }
 
 header{

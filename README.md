@@ -10,7 +10,7 @@ Javascript, HTML, CSS
 
 - [@Carlos27Spec](https://carlos27spec.github.io/HTML-Semantico/)
 
-![Logo](./imgs/Logo.png)
+![Logo](./assets/imgs/Logo.png)
 
 ## 🔗 Links
 
