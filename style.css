@@ -75,7 +75,7 @@ main{
 }
 
 #container {
-    display: flex;
+    display: flex;  
     justify-content: center;
     align-items: center;
     background-color: aliceblue;
@@ -109,6 +109,21 @@ div > p{
     white-space: nowrap;      
     overflow: hidden;         
     text-overflow: ellipsis;   
+}
+
+#toggleIngredientes ~ #Ingredientes {
+    display: none;
+    white-space: pre-line;
+}
+
+#toggleIngredientes:checked ~ #Ingredientes {
+    display: block;
+}
+
+p:has(#toggleIngredientes:checked) {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
 }
 
 #button{
