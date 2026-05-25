@@ -11,7 +11,7 @@ body{
     display: flex;
     flex-direction: column;
     font-family: 'Courier New', Courier, monospace;
-    background-image: url(background1.jpg);
+    background-image: url(/assets/imgs/background1.jpg);
 }
 
 header{
@@ -141,16 +141,4 @@ p:has(#toggleIngredientes:checked) {
     background-color: orange;
     color: white;
     transform: scale(1.1);
-}
-
-@media  (max-width: 768px){
-    main{
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 1024px){
-    main{
-        flex-direction: column;
-    }
 }
