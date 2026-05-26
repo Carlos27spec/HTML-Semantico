@@ -28,9 +28,11 @@ function cardapio(event) {
     event.preventDefault();
     let pedidoDigitado = document.getElementById("Receita").value.trim().replace(/\s+/g, " ");
 
+    const normalizar = (str) => str.toLowerCase().replace(/\s+/g, "");
+
     let receitaEncontrada = listaReceitas.find(
-        p => p.name.toLowerCase() === pedidoDigitado.toLowerCase()
-        || p.id == pedidoDigitado
+        p => normalizar(p.name) === normalizar(pedidoDigitado)
+            || p.id == pedidoDigitado
     );
 
     let image = document.getElementById("Comida");
