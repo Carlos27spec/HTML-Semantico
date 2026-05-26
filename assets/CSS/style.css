@@ -163,3 +163,24 @@ p:has(#toggleIngredientes:checked) {
  
     #button { gap: 0; justify-content: space-between; width: 100%; }
 }
+
+/*tela Tablet*/
+@media (min-width: 769px) and (max-width: 1280px) {
+    body { height: auto; min-height: 100dvh; }
+ 
+    header { padding: 16px 20px; }
+ 
+    main { padding: 16px; align-items: flex-start; }
+ 
+    section > h1 { text-align: center; padding: 8px 16px; white-space: normal; }
+ 
+    #container { flex-direction: column; width: 90%; margin: 0 auto; gap: 16px; }
+ 
+    #container > img { width: 100%; height: auto; max-height: 400px; object-fit: cover; }
+ 
+    #container > div { width: 100%; gap: 20px; }
+ 
+    div > p { max-width: 100%; }
+ 
+    #button { gap: 0; justify-content: space-between; width: 100%; }
+}
