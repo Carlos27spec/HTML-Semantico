@@ -41,10 +41,10 @@ function cardapio(event) {
         }
     } catch (error) {
         document.getElementById("Nome").innerText = error.message;
-        document.getElementById("ID").innerText = error.message
-        document.getElementById("Ingredientes").innerText = error.message
-        document.getElementById("Avaliacao").innerText = error.message
-        document.getElementById("Categoria").innerText = error.message
+        document.getElementById("ID").innerText = "Não encontrado"
+        document.getElementById("Ingredientes").innerText =  "Nada..."
+        document.getElementById("Avaliacao").innerText = "Negativa"
+        document.getElementById("Categoria").innerText = "Nenhuma"
         image.src = "assets/imgs/cozinhafogo.avif"
         image.style.display = "block";
         
